@@ -5,7 +5,16 @@ defmodule FoobarWeb.PageController do
     render(conn, "index.html")
   end
 
-  def fizzbuzz(conn, _params) do
-    json(conn, %{message: "return foo, bar or foobar here"})
+  def fizzbuzz(conn, params) do
+    case params do
+      "foo" ->
+        json(conn, %{message: "foo"})
+
+      "bar" ->
+        json(conn, %{message: "bar"})
+
+      "foobar" ->
+        json(conn, %{message: "foobar"})
+    end
   end
 end
