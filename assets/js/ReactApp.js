@@ -1,9 +1,9 @@
 import React from 'react';
 
-function foobar(fizz) {
+function foo(fizz) {
   var request = new XMLHttpRequest()
 
-request.open('GET', 'api/fizzbuzz', true)
+request.open('GET', 'api/fizzbuzz?t=foo', true)
 request.onload = function() {
   // Begin accessing JSON data here
   var data = JSON.parse(this.response)
@@ -16,7 +16,43 @@ request.onload = function() {
   }
 }
 
-request.send("foo")
+request.send()
+}
+function bar(fizz) {
+  var request = new XMLHttpRequest()
+
+request.open('GET', 'api/fizzbuzz?t=bar', true)
+request.onload = function() {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+      console.log(data)
+    }
+   else {
+    console.log('error')
+  }
+}
+
+request.send()
+}
+function foobar(fizz) {
+  var request = new XMLHttpRequest()
+
+request.open('GET', 'api/fizzbuzz?t=foobar', true)
+request.onload = function() {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+      console.log(data)
+    }
+   else {
+    console.log('error')
+  }
+}
+
+request.send()
 }
 
 function ReactApp() {
@@ -59,9 +95,9 @@ function ReactApp() {
 
             <p><strong>UI Buttons:</strong></p>
 
-            <p><button onClick={foobar}>foo</button></p>
+            <p><button onClick={foo}>foo</button></p>
 
-            <p><button onClick={foobar}>bar</button></p>
+            <p><button onClick={bar}>bar</button></p>
 
             <p><button onClick={foobar}>foobar</button></p>
 
