@@ -40,11 +40,16 @@ function ReactApp() {
 
             <p><strong>UI Buttons:</strong></p>
 
-            <p>Add them here</p>
+            <p><button onclick="myFunction()">foo</button></p>
+
+            <p><button onclick="myFunction()">bar</button></p>
+
+            <p><button onclick="myFunction()">foobar</button></p>
 
             <p><strong>API request result:</strong></p>
 
             <p>Render result here</p>
+
         </div>
     );
 }
