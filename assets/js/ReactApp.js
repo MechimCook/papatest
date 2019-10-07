@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 function foo(fizz) {
   var request = new XMLHttpRequest()
@@ -10,6 +11,7 @@ request.onload = function() {
 
   if (request.status >= 200 && request.status < 400) {
       console.log(data)
+      ReactDOM.render(data.message, document.getElementById('render'));
     }
    else {
     console.log('error')
@@ -28,6 +30,7 @@ request.onload = function() {
 
   if (request.status >= 200 && request.status < 400) {
       console.log(data)
+        ReactDOM.render(data.message, document.getElementById('render'));
     }
    else {
     console.log('error')
@@ -46,6 +49,7 @@ request.onload = function() {
 
   if (request.status >= 200 && request.status < 400) {
       console.log(data)
+        ReactDOM.render(data.message, document.getElementById('render'));
     }
    else {
     console.log('error')
@@ -103,7 +107,7 @@ function ReactApp() {
 
             <p><strong>API request result:</strong></p>
 
-            <p>Render result here</p>
+            <p id="render">Render result here</p>
 
         </div>
     );
