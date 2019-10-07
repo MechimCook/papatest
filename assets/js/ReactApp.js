@@ -1,5 +1,24 @@
 import React from 'react';
 
+function foobar(fizz) {
+  var request = new XMLHttpRequest()
+
+request.open('GET', 'api/fizzbuzz', true)
+request.onload = function() {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+      console.log(data)
+    }
+   else {
+    console.log('error')
+  }
+}
+
+request.send("foo")
+}
+
 function ReactApp() {
     return (
         <div className="App">
@@ -40,11 +59,11 @@ function ReactApp() {
 
             <p><strong>UI Buttons:</strong></p>
 
-            <p><button onclick="myFunction()">foo</button></p>
+            <p><button onClick={foobar}>foo</button></p>
 
-            <p><button onclick="myFunction()">bar</button></p>
+            <p><button onClick={foobar}>bar</button></p>
 
-            <p><button onclick="myFunction()">foobar</button></p>
+            <p><button onClick={foobar}>foobar</button></p>
 
             <p><strong>API request result:</strong></p>
 
