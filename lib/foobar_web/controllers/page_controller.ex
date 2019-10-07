@@ -7,14 +7,17 @@ defmodule FoobarWeb.PageController do
 
   def fizzbuzz(conn, params) do
     case params do
-      "foo" ->
+      %{"t" => "foo"} ->
         json(conn, %{message: "foo"})
 
-      "bar" ->
+      %{"t" => "bar"} ->
         json(conn, %{message: "bar"})
 
-      "foobar" ->
+      %{"t" => "foobar"} ->
         json(conn, %{message: "foobar"})
+
+      %{} ->
+        json(conn, %{message: "no bars sent"})
     end
   end
 end
